@@ -1,0 +1,41 @@
+
+<ion-tabs>
+  <ion-tab tab="announcements">
+    <div id="announcements-page">
+      <app-dashboard></app-dashboard>
+    </div>
+  </ion-tab>
+  <ion-tab tab="chat">
+    <div id="chat-page">
+      <app-chat-list></app-chat-list>
+    </div>
+  </ion-tab>
+  <ion-tab tab="events">
+    <div id="events-page">
+     <app-event-list></app-event-list>
+    </div>
+  </ion-tab>
+  <ion-tab tab="profile">
+    <div id="profile-page">
+     <app-profile></app-profile>
+    </div>
+  </ion-tab>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="announcements">
+      <ion-icon name="megaphone-outline"></ion-icon>
+      Announcements
+    </ion-tab-button>
+    <ion-tab-button tab="chat">
+      <ion-icon name="chatbubbles-outline"></ion-icon>
+      Chat
+    </ion-tab-button>
+    <ion-tab-button tab="events">
+      <ion-icon name="calendar-outline"></ion-icon>
+      Events
+    </ion-tab-button>
+    <ion-tab-button tab="profile">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      Profile
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

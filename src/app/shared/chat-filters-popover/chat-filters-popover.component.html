@@ -1,0 +1,29 @@
+<ion-list>
+  <ion-item>
+    <ion-label>Archived Chats</ion-label>
+    <ion-checkbox 
+      slot="end" 
+      [(ngModel)]="filters.archivedChats"
+    ></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Hidden Chats</ion-label>
+    <ion-checkbox 
+      slot="end" 
+      [(ngModel)]="filters.hiddenChats"
+    ></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Pinned Chats</ion-label>
+    <ion-checkbox 
+      slot="end" 
+      [(ngModel)]="filters.pinnedChats"
+    ></ion-checkbox>
+  </ion-item>
+  <ion-button 
+    expand="full" 
+    (click)="applyFilters()"
+  >
+    Apply Filters
+  </ion-button>
+</ion-list>

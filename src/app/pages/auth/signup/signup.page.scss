@@ -1,0 +1,102 @@
+.signup-container {
+    max-width: 400px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+    }
+  
+    p {
+      color: var(--ion-color-medium);
+      margin: 0;
+    }
+  }
+  
+  ion-item {
+    --padding-start: 0;
+    --padding-end: 0;
+    --inner-padding-end: 0;
+    --background: transparent;
+    
+    &::part(native) {
+      --inner-padding-end: 0;
+    }
+  }
+  
+  .password-toggle {
+    margin: 0;
+    height: 100%;
+  }
+  
+  .role-list {
+    background: transparent;
+  
+    ion-list-header {
+      padding-left: 0;
+      
+      ion-label {
+        font-weight: 500;
+        color: var(--ion-color-dark);
+      }
+    }
+  
+    ion-item {
+      --background: transparent;
+      --background-hover: var(--ion-color-light);
+      --ripple-color: transparent;
+      margin-bottom: 8px;
+      border-radius: 8px;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  
+    .role-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+  
+      ion-icon {
+        font-size: 20px;
+        color: var(--ion-color-medium);
+      }
+    }
+  }
+  
+  ion-radio {
+    --color-checked: var(--ion-color-primary);
+  }
+  
+  .login-link {
+    p {
+      font-size: 14px;
+      
+      a {
+        color: var(--ion-color-primary);
+        text-decoration: none;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  ion-note[slot="error"] {
+    font-size: 12px;
+    padding: 4px 0;
+  }
+  
+  ion-input.invalid {
+    --border-color: var(--ion-color-danger);
+  }
+  
+  @media (max-width: 768px) {
+    .signup-container {
+      padding: 16px;
+    }
+  }

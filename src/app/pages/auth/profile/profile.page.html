@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="ellipsis-horizontal"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="editProfile()">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="profile-container">
+    <ion-avatar class="profile-avatar">
+      <img [src]="user.avatarUrl || '/assets/shapes.svg'" alt="Profile Avatar">
+    </ion-avatar>
+
+    <ion-list lines="full">
+      <ion-item>
+        <ion-label position="fixed">Name</ion-label>
+        <ion-text>{{ user.name }}</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">Email</ion-label>
+        <ion-text>{{ user.email }}</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">Role</ion-label>
+        <ion-text>{{ user.role }}</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">Joined</ion-label>
+        <ion-text>{{ user.createdAt | date:'mediumDate' }}</ion-text>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button 
+        expand="block" 
+        color="danger" 
+        (click)="logout()"
+      >
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        Logout
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

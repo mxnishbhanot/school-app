@@ -1,0 +1,91 @@
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create Account</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-padding">
+  <div class="signup-container ion-text-center">
+    <h1 class="ion-padding-bottom">Welcome!</h1>
+    <p class="ion-padding-bottom">Please fill in your information to get started</p>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="ion-padding-top">
+      <!-- Name Input -->
+      <ion-item class="ion-margin-bottom">
+        <ion-label position="floating">Full Name</ion-label>
+        <ion-input 
+          formControlName="name"
+          type="text"
+          [class.invalid]="getErrorMessage('name')">
+        </ion-input>
+        <ion-note slot="error" *ngIf="getErrorMessage('name')">
+          {{ getErrorMessage('name') }}
+        </ion-note>
+      </ion-item>
+
+      <!-- Email Input -->
+      <ion-item class="ion-margin-bottom">
+        <ion-label position="floating">Email Address</ion-label>
+        <ion-input 
+          formControlName="email"
+          type="email"
+          [class.invalid]="getErrorMessage('email')">
+        </ion-input>
+        <ion-note slot="error" *ngIf="getErrorMessage('email')">
+          {{ getErrorMessage('email') }}
+        </ion-note>
+      </ion-item>
+
+      <!-- Password Input -->
+      <ion-item class="ion-margin-bottom">
+        <ion-label position="floating">Password</ion-label>
+          <ion-input type="password"  formControlName="password">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        <ion-note slot="error" *ngIf="getErrorMessage('password')">
+          {{ getErrorMessage('password') }}
+        </ion-note>
+      </ion-item>
+
+      <!-- Role Selection -->
+      <!-- <ion-list class="role-list ion-margin-bottom">
+        <ion-radio-group formControlName="role">
+          <ion-list-header>
+            <ion-label>Select Your Role</ion-label>
+          </ion-list-header>
+
+          <ion-item *ngFor="let role of roles" lines="none">
+            <ion-label>
+              <div class="role-option">
+                <ion-icon [name]="role.icon"></ion-icon>
+                {{ role.label }}
+              </div>
+            </ion-label>
+            <ion-radio [value]="role.value" slot="start"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list> -->
+
+      <!-- Submit Button -->
+      <ion-button 
+        expand="block" 
+        type="submit"
+        class="ion-margin-top"
+        [disabled]="!signupForm.valid || isSubmitting">
+        <ion-spinner *ngIf="isSubmitting" name="crescent"></ion-spinner>
+        <span *ngIf="!isSubmitting">Create Account</span>
+      </ion-button>
+    </form>
+
+    <!-- Login Link -->
+    <div class="login-link ion-text-center ion-padding-top">
+      <p>
+        Already have an account? 
+        <a [routerLink]="['/login']">Sign In</a>
+      </p>
+    </div>
+  </div>
+</ion-content>

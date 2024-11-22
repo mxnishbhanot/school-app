@@ -1,0 +1,20 @@
+<ion-item 
+(touchstart)="onTouchStart($event)"
+(touchend)="onTouchEnd($event)"
+(mousedown)="onMouseDown($event)"
+(mouseup)="onMouseUp($event)"
+[class.pinned]="chat.pinned"
+>
+<ion-avatar slot="start">
+  <ion-img [src]="chat.avatar || '/assets/shapes.svg'"></ion-img>
+</ion-avatar>
+<ion-label>
+  <h2>{{ chat.name }}</h2>
+  <p>{{ chat.lastMessage }}</p>
+</ion-label>
+<ion-note slot="end">{{ formatTimestamp(chat.timestamp) }}</ion-note>
+
+<ion-badge *ngIf="chat.unread" color="primary" slot="end">
+  {{ getUnreadCount() }}
+</ion-badge>
+</ion-item>

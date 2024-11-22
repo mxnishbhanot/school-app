@@ -1,0 +1,41 @@
+/* profile.page.scss */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+ion-list {
+  width: 100%;
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 10px;
+}
+
+ion-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+ion-text {
+  color: var(--ion-color-medium-shade);
+}

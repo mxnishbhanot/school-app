@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="ellipsis-horizontal"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Announcements</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <!-- Announcements Section -->
+    <div class="ion-padding">
+      <ion-list>
+        <ion-item-group>
+          <ion-item-divider sticky>
+            <ion-label>Latest Announcements</ion-label>
+          </ion-item-divider>
+          
+          <ion-card *ngFor="let announcement of announcements" class="ion-margin-bottom">
+            <ion-card-header>
+              <div class="ion-padding-bottom">
+                <ion-icon name="megaphone-outline" class="ion-margin-end"></ion-icon>
+                <ion-text color="primary">{{announcement.title}}</ion-text>
+              </div>
+              <ion-card-subtitle>
+                {{formatDate(announcement.date)}}
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              {{announcement.description}}
+            </ion-card-content>
+          </ion-card>
+        </ion-item-group>
+      </ion-list>
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="(selectedSegment === 'announcements' && announcements.length === 0)"
+       class="ion-padding ion-text-center">
+    <ion-icon name="documents-outline" size="large" class="ion-padding"></ion-icon>
+    <p>No Announcements Available</p>
+  </div>
+</ion-content>
